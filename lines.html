@@ -1,0 +1,44 @@
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script>
+        let data = [{
+            "x": [0, 1, 2, 3, 4, 5],
+            "y": [37.1, 37.3, 37.6, 38, 37.1, 36.8],
+            "mode": "lines+markers",
+            "type": "scatter",
+            "name": "Pius, A"
+        }, {
+            "x": [0, 1, 2, 3, 4, 5, 6, 7],
+            "y": [39, 38.5, 37.9, 38.6, 38, 37.2, 36.6, 37],
+            "mode": "lines+markers",
+            "type": "scatter",
+            "name": "Verus, L"
+        }, {
+            "x": [0, 1, 2, 3, 4, 5, 6, 7],
+            "y": [37.5, 39, 39.2, 38.4, 37, 38, 37.6, 37.1],
+            "mode": "lines+markers",
+            "type": "scatter",
+            "name": "Aurelius, M"
+        }];
+        $(() => {
+            // everything here happens only after the page is loaded
+            Plotly.newPlot("myGraph", data);
+        });
+    </script>
+    <style>
+        #myGraph {
+            width: 600px;
+            height: 400px
+        }
+    </style>
+</head>
+
+<body>
+    <div>Here is our graph:</div>
+    <div id="myGraph"></div>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script>
+        let data = [{
+            "x": [1, 2, 3, 4],
+            "y": [1, 4, 9, 16],
+            "mode": "markers",
+            "type": "scatter"
+        }];
+        let test_data = [{
+            "x": ["November 11", "November 12", "November 13", "November 14", "November 15", "November 16", "November 17"],
+            "y": [5, 6, 6, 8, 0, 13, 12],
+            "mode": "markers",
+            "type": "scatter"
+        }];
+        $(() => {
+            // everything here happens only after the page is loaded
+            Plotly.newPlot("myGraph", data);
+            Plotly.newPlot("positiveTests", test_data);
+        });
+    </script>
+    <style>
+        #myGraph, #positiveTests {
+            width: 600px;
+            height: 400px
+        }
+    </style>
+</head>
+
+<body>
+    <div>Here is our graph:</div>
+    <div id="myGraph"></div>
+    <div>Positive tests by day:</div>
+    <div id="positiveTests"></div>
+</body>
+
+</html>
