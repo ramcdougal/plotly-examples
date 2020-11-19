@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script>
+        // data from https://data.worldbank.org/indicator/SH.STA.DIAB.ZS
+        // accessed 2020-11-19
+        let data = [{
+            "locations": ["United States", "Germany", "Spain", "Angola", "Argentina"],
+            "z": [10.8, 10.4, 6.9, 10.4, 4.5, 5.9],
+            "locationmode": "country names",
+            "type": "choropleth"
+        }];
+        let layout = {
+            "title": "Diabetes prevalence (% of population ages 20-79)",
+            "geo": {
+                "projection": {
+                    "type": "robinson"
+                }
+            }
+        };
+        $(() => {
+            // everything here happens only after the page is loaded
+            Plotly.newPlot("myGraph", data, layout);
+        });
+    </script>
+    <style>
+        #myGraph {
+            width: 600px;
+            height: 400px
+        }
+    </style>
+</head>
+
+<body>
+    <div>Here is our graph:</div>
+    <div id="myGraph"></div>
+</body>
+
+</html>
