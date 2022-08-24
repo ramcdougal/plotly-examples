@@ -1,4 +1,4 @@
-from flask import Flask, render_template_string, jsonify
+from flask import Flask, render_template_string
 
 my_template = """
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
@@ -17,7 +17,7 @@ app = Flask(__name__)
 
 @app.route("/api/data")
 def data():
-    return jsonify([{"x": [1, 2, 3, 4, 5], "y": [1, 4, 9, 16, 25], "type": "scatter"}])
+    return [{"x": [1, 2, 3, 4, 5], "y": [1, 4, 9, 16, 25], "type": "scatter"}]
 
 
 @app.route("/")
