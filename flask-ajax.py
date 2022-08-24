@@ -1,4 +1,4 @@
-from flask import Flask, render_template_string
+from flask import Flask
 
 my_template = """
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
@@ -22,7 +22,7 @@ def data():
 
 @app.route("/")
 def index():
-    return render_template_string(my_template)
+    return my_template
 
 
 if __name__ == "__main__":
